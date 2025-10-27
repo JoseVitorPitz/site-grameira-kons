@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grameira Kons - Gramas de Qualidade em Biguaçu</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            box-sizing: border-box;
+            font-family: 'Inter', sans-serif;
+        }
+
+        .hero-bg {
+            background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+                url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600"><defs><pattern id="grass" patternUnits="userSpaceOnUse" width="4" height="4"><rect width="4" height="4" fill="%2334d399"/><circle cx="2" cy="2" r="0.5" fill="%2310b981"/></pattern></defs><rect width="1200" height="600" fill="url(%23grass)"/><rect width="1200" height="600" fill="url(%23grass)" opacity="0.8"/></svg>');
+            background-size: cover;
+            background-position: center;
+        }
+
+        .grass-pattern {
+            background: linear-gradient(135deg, #10b981 0%, #34d399 50%, #6ee7b7 100%);
+        }
+
+        .card-hover {
+            transition: all 0.3s ease;
+        }
+
+        .card-hover:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+
+        .whatsapp-btn {
+            background: linear-gradient(135deg, #25d366 0%, #128c7e 100%);
+            transition: all 0.3s ease;
+        }
+
+        .whatsapp-btn:hover {
+            transform: scale(1.05);
+            box-shadow: 0 10px 20px rgba(37, 211, 102, 0.3);
+        }
+
+        .smooth-scroll {
+            scroll-behavior: smooth;
+        }
+    </style>
+</head>
+
+<body class="smooth-scroll">
+    <!-- Header -->
+    <header class="bg-white shadow-lg fixed w-full top-0 z-50">
+        <nav class="container mx-auto px-4 py-4">
+            <div class="flex justify-between items-center">
+                <div class="flex items-center space-x-2">
+                    <div class="w-10 h-10 rounded-full overflow-hidden flex items-center justify-center">
+                        <img src="https://lh3.googleusercontent.com/p/AF1QipMB5CxucZQqcK784OCO5aZzlXQwLnAGvZLWNEd4=s680-w680-h510-rw"
+                            alt="Logo" class="w-full h-full object-cover" />
+                    </div>
+                    <h1 class="text-2xl font-bold text-green-800">Grameira Kons</h1>
+                </div>
+
+                <div class="hidden md:flex space-x-6">
+                    <a href="#inicio"
+                        class="text-gray-700 hover:text-green-600 font-medium transition-colors">Início</a>
+                    <a href="#tipos-grama"
+                        class="text-gray-700 hover:text-green-600 font-medium transition-colors">Tipos de Grama</a>
+                    <a href="#orcamento"
+                        class="text-gray-700 hover:text-green-600 font-medium transition-colors">Orçamento</a>
+                    <a href="#contato"
+                        class="text-gray-700 hover:text-green-600 font-medium transition-colors">Contato</a>
+                </div>
+
+                <button class="md:hidden text-green-600" onclick="toggleMenu()">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M4 6h16M4 12h16M4 18h16"></path>
+                    </svg>
+                </button>
+            </div>
+
+            <div id="mobile-menu" class="md:hidden hidden mt-4 pb-4">
+                <a href="#inicio" class="block py-2 text-gray-700 hover:text-green-600"
+                    onclick="toggleMenu()">Início</a>
+                <a href="#tipos-grama" class="block py-2 text-gray-700 hover:text-green-600"
+                    onclick="toggleMenu()">Tipos de Grama</a>
+                <a href="#orcamento" class="block py-2 text-gray-700 hover:text-green-600"
+                    onclick="toggleMenu()">Orçamento</a>
+                <a href="#contato" class="block py-2 text-gray-700 hover:text-green-600"
+                    onclick="toggleMenu()">Contato</a>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section
+        class="min-h-screen bg-[url('https://edegramas.com.br/wp-content/uploads/2025/02/Banner1.webp')] bg-cover bg-center bg-no-repeat flex items-center justify-center">
+        <div class="bg-black/50 text-center text-white px-6 py-12 rounded-2xl max-w-3xl mx-auto">
+            <h2 class="text-4xl md:text-6xl font-bold mb-6 leading-tight">
+                Transforme seu espaço com<br>
+                <span class="text-green-400">gramas de qualidade!</span>
+            </h2>
+
+            <p class="text-xl md:text-2xl mb-8">
+                Trabalhamos com os melhores tipos de grama: Esmeralda e São Carlos
+            </p>
+
+            <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
+                <button onclick="scrollToSection('orcamento')"
+                    class="bg-green-600 hover:bg-green-700 text-white px-8 py-4 rounded-full text-lg font-semibold transition-all transform hover:scale-105 shadow-lg">
+                    Peça seu orçamento
+                </button>
+
+                <a href="https://wa.me/5548984540699?text=Olá! Gostaria de saber mais sobre as gramas da Grameira Kons."
+                    target="_blank" rel="noopener noreferrer"
+                    class="bg-green-500 hover:bg-green-600 text-white px-8 py-4 rounded-full text-lg font-semibold flex items-center space-x-2 shadow-lg transition">
+                    <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                        <path
+                            d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893A11.821 11.821 0 0020.885 3.488" />
+                    </svg>
+                    <span>Falar no WhatsApp</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tipos de Grama -->
+    <section id="tipos-grama" class="py-20 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h3 class="text-4xl font-bold text-gray-800 mb-4">Nossos Tipos de Grama</h3>
+                <p class="text-xl text-gray-600 max-w-2xl mx-auto">
+                    Oferecemos as melhores variedades de grama para cada tipo de ambiente e necessidade
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto">
+                <!-- Grama Esmeralda -->
+                <div class="bg-white rounded-2xl shadow-lg overflow-hidden card-hover">
+                    <div
+                        class="h-64 bg-[url('https://quallygrama.com.br/wp-content/uploads/2023/05/Esmeralda-0.jpg')] bg-cover bg-center flex items-center justify-center">
+                        <svg class="w-32 h-32 text-white opacity-80" fill="currentColor" viewBox="0 0 24 24">
+                        </svg>
+                    </div>
+                    <div class="p-8">
+                        <h4 class="text-2xl font-bold text-green-800 mb-4">Grama Esmeralda</h4>
+                        <p class="text-gray-600 mb-6">
+                            Grama de textura fina e aparência elegante, ideal para jardins residenciais e áreas de
+                            lazer.
+                        </p>
+                        <ul class="space-y-3">
+                            <li class="flex items-center text-gray-700">
+                                <svg class="w-5 h-5 text-green-500 mr-3" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd"
+                                        d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                                        clip-rule="evenodd"></path>
+                                </svg>
+                                Alta resistência ao pisoteio
+                            </li>
+                            <li class="flex items-center text-gray-700">
+                                <svg class="w-5 h-5 text-green-500 mr-3" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd"
+                                        d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                                        clip-rule="evenodd"></path>
+                                </svg>
+                                Fácil manutenção
+                            </li>
+                            <li class="flex items-center text-gray-700">
+                                <svg class="w-5 h-5 text-green-500 mr-3" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd"
+                                        d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                                        clip-rule="evenodd"></path>
+                                </svg>
+                                Boa adaptação ao sol pleno
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Grama São Carlos -->
+                <div class="bg-white rounded-2xl shadow-lg overflow-hidden card-hover">
+                    <div
+                        class="h-64 bg-[url('https://projetojardinando.com.br/wp-content/uploads/2020/06/sao_calos_destaque_1280x720_1-1024x576.jpg')] bg-cover bg-center flex items-center justify-center">
+                        <svg class="w-32 h-32 text-white opacity-80" fill="currentColor" viewBox="0 0 24 24">
+                        </svg>
+                    </div>
+                    <div class="p-8">
+                        <h4 class="text-2xl font-bold text-green-800 mb-4">Grama São Carlos</h4>
+                        <p class="text-gray-600 mb-6">
+                            Grama de folhas largas e verde intenso, perfeita para áreas sombreadas e úmidas.
+                        </p>
+                        <ul class="space-y-3">
+                            <li class="flex items-center text-gray-700">
+                                <svg class="w-5 h-5 text-green-500 mr-3" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd"
+                                        d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                                        clip-rule="evenodd"></path>
+                                </svg>
+                                Boa resistência à sombra
+                            </li>
+                            <li class="flex items-center text-gray-700">
+                                <svg class="w-5 h-5 text-green-500 mr-3" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd"
+                                        d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                                        clip-rule="evenodd"></path>
+                                </svg>
+                                Crescimento uniforme
+                            </li>
+                            <li class="flex items-center text-gray-700">
+                                <svg class="w-5 h-5 text-green-500 mr-3" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd"
+                                        d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                                        clip-rule="evenodd"></path>
+                                </svg>
+                                Ideal para solos úmidos
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Orçamento -->
+    <section id="orcamento" class="py-20 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h3 class="text-4xl font-bold text-gray-800 mb-4">Solicite seu orçamento</h3>
+                <p class="text-xl text-gray-600 max-w-2xl mx-auto">
+                    Preencha o formulário e entraremos em contato com você o mais rápido possível
+                </p>
+            </div>
+
+            <div class="max-w-2xl mx-auto">
+                <form id="orcamento-form" class="bg-gray-50 rounded-2xl p-8 shadow-lg">
+                    <div class="grid md:grid-cols-2 gap-6 mb-6">
+                        <div>
+                            <label for="nome" class="block text-gray-700 font-semibold mb-2">Nome completo</label>
+                            <input type="text" id="nome" name="nome" required
+                                class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent transition-all">
+                        </div>
+                        <div>
+                            <label for="telefone" class="block text-gray-700 font-semibold mb-2">Telefone
+                                (WhatsApp)</label>
+                            <input type="tel" id="telefone" name="telefone" required
+                                class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent transition-all">
+                        </div>
+                    </div>
+
+                    <div class="grid md:grid-cols-2 gap-6 mb-6">
+                        <div>
+                            <label for="tipo-grama" class="block text-gray-700 font-semibold mb-2">Tipo de grama</label>
+                            <select id="tipo-grama" name="tipo-grama" required
+                                class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent transition-all">
+                                <option value="">Selecione o tipo</option>
+                                <option value="esmeralda">Grama Esmeralda</option>
+                                <option value="sao-carlos">Grama São Carlos</option>
+                                <option value="ambas">Ambas (quero saber mais)</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label for="metragem" class="block text-gray-700 font-semibold mb-2">Metragem aproximada
+                                (opcional)</label>
+                            <input type="text" id="metragem" name="metragem" placeholder="Ex: 100m²"
+                                class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent transition-all">
+                        </div>
+                    </div>
+
+                    <div class="mb-6">
+                        <label for="mensagem" class="block text-gray-700 font-semibold mb-2">Mensagem</label>
+                        <textarea id="mensagem" name="mensagem" rows="4"
+                            placeholder="Conte-nos mais sobre seu projeto..."
+                            class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent transition-all resize-none"></textarea>
+                    </div>
+
+                    <button type="submit"
+                        class="w-full bg-green-600 hover:bg-green-700 text-white py-4 rounded-lg text-lg font-semibold transition-all transform hover:scale-105 shadow-lg">
+                        Solicitar orçamento
+                    </button>
+                </form>
+
+                <div id="success-message"
+                    class="hidden mt-6 p-4 bg-green-100 border border-green-400 text-green-700 rounded-lg text-center">
+                    <svg class="w-6 h-6 inline-block mr-2" fill="currentColor" viewBox="0 0 20 20">
+                        <path fill-rule="evenodd"
+                            d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                            clip-rule="evenodd"></path>
+                    </svg>
+                    Obrigado! Recebemos sua solicitação e entraremos em contato em breve.
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contato -->
+    <section id="contato" class="py-20 bg-green-50">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h3 class="text-4xl font-bold text-gray-800 mb-4">Onde estamos</h3>
+                <p class="text-xl text-gray-600">Atendemos Biguaçu e região</p>
+            </div>
+
+            <div class="max-w-4xl mx-auto grid md:grid-cols-2 gap-8">
+                <div class="bg-white rounded-2xl p-8 shadow-lg">
+                    <h4 class="text-2xl font-bold text-green-800 mb-6">Informações de contato</h4>
+
+                    <div class="space-y-4">
+                        <div class="flex items-center">
+                            <svg class="w-6 h-6 text-green-600 mr-4" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd"
+                                    d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z"
+                                    clip-rule="evenodd"></path>
+                            </svg>
+                            <div>
+                                <p class="font-semibold text-gray-800">Endereço</p>
+                                <p class="text-gray-600">Biguaçu - SC</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-center">
+                            <svg class="w-6 h-6 text-green-600 mr-4" fill="currentColor" viewBox="0 0 20 20">
+                                <path
+                                    d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z">
+                                </path>
+                            </svg>
+                            <div>
+                                <p class="font-semibold text-gray-800">WhatsApp</p>
+                                <p class="text-gray-600">(48) 98454-0699</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-center">
+                            <svg class="w-6 h-6 text-green-600 mr-4" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd"
+                                    d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-12a1 1 0 10-2 0v4a1 1 0 00.293.707l2.828 2.829a1 1 0 101.415-1.415L11 9.586V6z"
+                                    clip-rule="evenodd"></path>
+                            </svg>
+                            <div>
+                                <p class="font-semibold text-gray-800">Horário de atendimento</p>
+                                <p class="text-gray-600">Segunda a Sábado: 8h às 18h</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="mt-8">
+                        <a href="https://wa.me/5548984540699?text=Olá! Gostaria de saber mais sobre as gramas da Grameira Kons."
+                            target="_blank" rel="noopener noreferrer"
+                            class="whatsapp-btn text-white px-6 py-3 rounded-lg font-semibold flex items-center justify-center space-x-2 w-full">
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                                <path
+                                    d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893A11.821 11.821 0 0020.885 3.488" />
+                            </svg>
+                            <span>Falar no WhatsApp</span>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-2xl p-8 shadow-lg">
+                    <h4 class="text-2xl font-bold text-green-800 mb-6 text-center">Localização</h4>
+
+                    <div class="text-center">
+                        <svg class="w-12 h-12 text-green-600 mx-auto mb-3" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd"
+                                d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z"
+                                clip-rule="evenodd"></path>
+                        </svg>
+
+                        <p class="text-green-800 font-semibold text-lg">Biguaçu - SC</p>
+                        <p class="text-green-600 text-sm mb-4">Atendemos toda a região</p>
+
+                        <!-- MAPA EMBUTIDO -->
+                        <div class="rounded-xl overflow-hidden shadow-md border border-green-200">
+                            <iframe
+                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4657.493391781805!2d-48.75897448789142!3d-27.530324419194983!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9520b314e64358fd%3A0x14ba25210b88cf5d!2sGrameira%20kons!5e1!3m2!1spt-BR!2sbr!4v1761603956761!5m2!1spt-BR!2sbr"
+                                class="w-full h-56 md:h-64" style="border:0;" allowfullscreen="" loading="lazy"
+                                referrerpolicy="no-referrer-when-downgrade">
+                            </iframe>
+                        </div>
+
+                        <!-- LINK OPCIONAL -->
+                        <a href="https://www.google.com/maps?q=Grameira+kons+Biguaçu+SC" target="_blank"
+                            rel="noopener noreferrer"
+                            class="inline-block mt-3 text-green-700 hover:text-green-800 font-semibold underline">
+                            Ver no Google Maps
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-green-800 text-white py-8">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="flex items-center space-x-2 mb-4 md:mb-0">
+                    <div class="w-8 h-8 bg-green-600 rounded-full flex items-center justify-center">
+                        <span class="text-white font-bold">G</span>
+                    </div>
+                    <span class="text-xl font-bold">Grameira Kons</span>
+                </div>
+
+                <p class="text-green-200 text-center mb-4 md:mb-0">
+                    © 2025 Grameira Kons - Todos os direitos reservados
+                </p>
+
+                <div class="flex space-x-4">
+                    <a href="https://wa.me/5548984540699" target="_blank" rel="noopener noreferrer"
+                        class="text-green-200 hover:text-white transition-colors">
+                        <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                            <path
+                                d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893A11.821 11.821 0 0020.885 3.488" />
+                        </svg>
+                    </a>
+                    <a href="https://www.instagram.com/grameirakons/" target="_blank" rel="noopener noreferrer"
+                        class="text-green-200 hover:text-white transition-colors">
+                        <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                            <path
+                                d="M7.75 2A5.75 5.75 0 0 0 2 7.75v8.5A5.75 5.75 0 0 0 7.75 22h8.5A5.75 5.75 0 0 0 22 16.25v-8.5A5.75 5.75 0 0 0 16.25 2h-8.5ZM12 7a5 5 0 1 1 0 10 5 5 0 0 1 0-10Zm0 1.5A3.5 3.5 0 1 0 12 15a3.5 3.5 0 0 0 0-7Zm4.75-.25a1 1 0 1 1 0-2 1 1 0 0 1 0 2Z" />
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        function toggleMenu() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+        }
+
+        function scrollToSection(sectionId) {
+            document.getElementById(sectionId).scrollIntoView({
+                behavior: 'smooth'
+            });
+        }
+
+        // Form submission
+        document.getElementById('orcamento-form').addEventListener('submit', function (e) {
+            e.preventDefault();
+
+            const formData = new FormData(this);
+            const data = Object.fromEntries(formData);
+
+            // Simulate form submission
+            setTimeout(() => {
+                document.getElementById('orcamento-form').style.display = 'none';
+                document.getElementById('success-message').classList.remove('hidden');
+
+                // Reset form after 5 seconds
+                setTimeout(() => {
+                    document.getElementById('orcamento-form').style.display = 'block';
+                    document.getElementById('success-message').classList.add('hidden');
+                    document.getElementById('orcamento-form').reset();
+                }, 5000);
+            }, 1000);
+        });
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Add scroll effect to header
+        window.addEventListener('scroll', function () {
+            const header = document.querySelector('header');
+            if (window.scrollY > 100) {
+                header.classList.add('bg-white/95', 'backdrop-blur-sm');
+            } else {
+                header.classList.remove('bg-white/95', 'backdrop-blur-sm');
+            }
+        });
+    </script>
+    <script>(function () { function c() { var b = a.contentDocument || a.contentWindow.document; if (b) { var d = b.createElement('script'); d.innerHTML = "window.__CF$cv$params={r:'99557a06636e364c',t:'MTc2MTYwMjUzNS4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);"; b.getElementsByTagName('head')[0].appendChild(d) } } if (document.body) { var a = document.createElement('iframe'); a.height = 1; a.width = 1; a.style.position = 'absolute'; a.style.top = 0; a.style.left = 0; a.style.border = 'none'; a.style.visibility = 'hidden'; document.body.appendChild(a); if ('loading' !== document.readyState) c(); else if (window.addEventListener) document.addEventListener('DOMContentLoaded', c); else { var e = document.onreadystatechange || function () { }; document.onreadystatechange = function (b) { e(b); 'loading' !== document.readyState && (document.onreadystatechange = e, c()) } } } })();</script>
+</body>
+
+</html>
