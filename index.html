@@ -4,421 +4,699 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Grameira Kons - Gramas de Qualidade em Biguaçu</title>
+    <title>Grameira Kons | Grama Esmeralda e São Carlos direto do plantio em Biguaçu, SC</title>
+    <meta name="description" content="Grameira Kons: produção própria de grama Esmeralda e São Carlos em Biguaçu, SC. Para jardim, sítio, obra ou campo esportivo. Entrega ou retirada no local, atendendo Biguaçu e a Grande Florianópolis.">
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,500;1,9..144,600&family=Work+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
+        :root {
+            --moss-950: #101c0e;
+            --moss-800: #203219;
+            --moss-700: #2b4321;
+            --moss-600: #3c5a2c;
+            --turf-500: #6d8f45;
+            --turf-300: #a3bd7c;
+            --wheat-400: #c79a2e;
+            --wheat-300: #e0bd63;
+            --soil-700: #5a3e24;
+            --cream-50: #f6f2e4;
+            --cream-100: #efe8d2;
+            --ink-900: #1a2116;
+        }
+
+        * { box-sizing: border-box; }
+
         body {
-            box-sizing: border-box;
-            font-family: 'Inter', sans-serif;
+            font-family: 'Work Sans', sans-serif;
+            background: var(--cream-50);
+            color: var(--ink-900);
+        }
+
+        .font-display {
+            font-family: 'Fraunces', serif;
+        }
+
+        .eyebrow {
+            font-family: 'Work Sans', sans-serif;
+            font-size: 0.75rem;
+            font-weight: 600;
+            letter-spacing: 0.18em;
+            text-transform: uppercase;
+        }
+
+        /* Signature motif: mowing stripes, like a freshly cut lawn */
+        .mow-stripes {
+            background-image: repeating-linear-gradient(
+                115deg,
+                var(--moss-700) 0px,
+                var(--moss-700) 46px,
+                var(--moss-600) 46px,
+                var(--moss-600) 92px
+            );
+        }
+
+        .mow-stripes-light {
+            background-image: repeating-linear-gradient(
+                115deg,
+                var(--turf-300) 0px,
+                var(--turf-300) 22px,
+                var(--cream-100) 22px,
+                var(--cream-100) 44px
+            );
+        }
+
+        .mow-divider {
+            height: 14px;
+            background-image: repeating-linear-gradient(
+                115deg,
+                var(--moss-600) 0px,
+                var(--moss-600) 18px,
+                var(--turf-500) 18px,
+                var(--turf-500) 36px
+            );
         }
 
         .hero-bg {
-            background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
-                url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600"><defs><pattern id="grass" patternUnits="userSpaceOnUse" width="4" height="4"><rect width="4" height="4" fill="%2334d399"/><circle cx="2" cy="2" r="0.5" fill="%2310b981"/></pattern></defs><rect width="1200" height="600" fill="url(%23grass)"/><rect width="1200" height="600" fill="url(%23grass)" opacity="0.8"/></svg>');
-            background-size: cover;
-            background-position: center;
-        }
-
-        .grass-pattern {
-            background: linear-gradient(135deg, #10b981 0%, #34d399 50%, #6ee7b7 100%);
+            background-color: var(--moss-950);
+            background-image:
+                linear-gradient(115deg, rgba(16, 28, 14, 0.94) 0%, rgba(16, 28, 14, 0.75) 55%, rgba(16, 28, 14, 0.94) 100%),
+                repeating-linear-gradient(
+                    115deg,
+                    var(--moss-700) 0px,
+                    var(--moss-700) 46px,
+                    var(--moss-800) 46px,
+                    var(--moss-800) 92px
+                );
         }
 
         .card-hover {
-            transition: all 0.3s ease;
+            transition: transform 0.25s ease, box-shadow 0.25s ease;
         }
 
         .card-hover:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+            transform: translateY(-4px);
+            box-shadow: 0 20px 35px -15px rgba(16, 28, 14, 0.35);
         }
 
-        .whatsapp-btn {
-            background: linear-gradient(135deg, #25d366 0%, #128c7e 100%);
-            transition: all 0.3s ease;
+        .btn-primary {
+            background: var(--wheat-400);
+            color: var(--moss-950);
+            transition: transform 0.2s ease, background 0.2s ease;
         }
 
-        .whatsapp-btn:hover {
-            transform: scale(1.05);
+        .btn-primary:hover {
+            background: var(--wheat-300);
+            transform: translateY(-2px);
+        }
+
+        .btn-whats {
+            background: #25d366;
+            color: #0b2e0b;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .btn-whats:hover {
+            transform: translateY(-2px);
             box-shadow: 0 10px 20px rgba(37, 211, 102, 0.3);
         }
 
-        .smooth-scroll {
-            scroll-behavior: smooth;
+        .btn-outline-cream {
+            border: 1.5px solid var(--cream-50);
+            color: var(--cream-50);
+            transition: all 0.2s ease;
+        }
+
+        .btn-outline-cream:hover {
+            background: var(--cream-50);
+            color: var(--moss-950);
+        }
+
+        .photo-slot {
+            border: 2px dashed var(--turf-500);
+            background: var(--cream-100);
+            color: var(--moss-700);
+        }
+
+        .step-number {
+            font-family: 'Fraunces', serif;
+            font-weight: 600;
+            color: var(--wheat-400);
+        }
+
+        .smooth-scroll { scroll-behavior: smooth; }
+
+        .link-underline {
+            position: relative;
+        }
+        .link-underline::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: -3px;
+            width: 0;
+            height: 2px;
+            background: var(--wheat-400);
+            transition: width 0.25s ease;
+        }
+        .link-underline:hover::after {
+            width: 100%;
+        }
+
+        .reveal {
+            opacity: 0;
+            transform: translateY(22px);
+            transition: opacity 0.7s ease, transform 0.7s ease;
+        }
+        .reveal.is-visible {
+            opacity: 1;
+            transform: none;
+        }
+        @media (prefers-reduced-motion: reduce) {
+            .reveal { opacity: 1; transform: none; transition: none; }
         }
     </style>
 </head>
 
 <body class="smooth-scroll">
+
     <!-- Header -->
-    <header class="bg-white shadow-lg fixed w-full top-0 z-50">
-        <nav class="container mx-auto px-4 py-4">
-            <div class="flex justify-between items-center">
-                <div class="flex items-center space-x-2">
-                    <div class="w-10 h-10 rounded-full overflow-hidden flex items-center justify-center">
+    <header id="site-header" class="fixed w-full top-0 z-50 transition-colors duration-300" style="background: rgba(246,242,228,0.92); backdrop-filter: blur(6px);">
+        <nav class="container mx-auto px-4 md:px-6">
+            <div class="flex justify-between items-center py-3">
+                <a href="#inicio" class="flex items-center gap-3">
+                    <div class="w-11 h-11 rounded-full overflow-hidden flex items-center justify-center border-2" style="border-color: var(--moss-700);">
                         <img src="https://lh3.googleusercontent.com/p/AF1QipMB5CxucZQqcK784OCO5aZzlXQwLnAGvZLWNEd4=s680-w680-h510-rw"
-                            alt="Logo" class="w-full h-full object-cover" />
+                            alt="Logo Grameira Kons" class="w-full h-full object-cover" />
                     </div>
-                    <h1 class="text-2xl font-bold text-green-800">Grameira Kons</h1>
+                    <div class="leading-tight">
+                        <p class="font-display font-semibold text-lg" style="color: var(--moss-800);">Grameira Kons</p>
+                        <p class="eyebrow" style="color: var(--turf-500);">Biguaçu · SC</p>
+                    </div>
+                </a>
+
+                <div class="hidden md:flex items-center gap-8">
+                    <a href="#sobre" class="link-underline font-medium" style="color: var(--moss-800);">Sobre</a>
+                    <a href="#tipos-grama" class="link-underline font-medium" style="color: var(--moss-800);">Tipos de Grama</a>
+                    <a href="#como-funciona" class="link-underline font-medium" style="color: var(--moss-800);">Como Funciona</a>
+                    <a href="#contato" class="link-underline font-medium" style="color: var(--moss-800);">Contato</a>
+                    <a href="#orcamento" class="btn-primary px-5 py-2.5 rounded-full font-semibold text-sm">
+                        Pedir orçamento
+                    </a>
                 </div>
 
-                <div class="hidden md:flex space-x-6">
-                    <a href="#inicio"
-                        class="text-gray-700 hover:text-green-600 font-medium transition-colors">Início</a>
-                    <a href="#tipos-grama"
-                        class="text-gray-700 hover:text-green-600 font-medium transition-colors">Tipos de Grama</a>
-                    <a href="#orcamento"
-                        class="text-gray-700 hover:text-green-600 font-medium transition-colors">Orçamento</a>
-                    <a href="#contato"
-                        class="text-gray-700 hover:text-green-600 font-medium transition-colors">Contato</a>
-                </div>
-
-                <button class="md:hidden text-green-600" onclick="toggleMenu()">
-                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                            d="M4 6h16M4 12h16M4 18h16"></path>
+                <button class="md:hidden" style="color: var(--moss-800);" onclick="toggleMenu()" aria-label="Abrir menu">
+                    <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
                     </svg>
                 </button>
             </div>
 
-            <div id="mobile-menu" class="md:hidden hidden mt-4 pb-4">
-                <a href="#inicio" class="block py-2 text-gray-700 hover:text-green-600"
-                    onclick="toggleMenu()">Início</a>
-                <a href="#tipos-grama" class="block py-2 text-gray-700 hover:text-green-600"
-                    onclick="toggleMenu()">Tipos de Grama</a>
-                <a href="#orcamento" class="block py-2 text-gray-700 hover:text-green-600"
-                    onclick="toggleMenu()">Orçamento</a>
-                <a href="#contato" class="block py-2 text-gray-700 hover:text-green-600"
-                    onclick="toggleMenu()">Contato</a>
+            <div id="mobile-menu" class="md:hidden hidden pb-4 flex flex-col gap-1">
+                <a href="#sobre" class="py-2 font-medium" style="color: var(--moss-800);" onclick="toggleMenu()">Sobre</a>
+                <a href="#tipos-grama" class="py-2 font-medium" style="color: var(--moss-800);" onclick="toggleMenu()">Tipos de Grama</a>
+                <a href="#como-funciona" class="py-2 font-medium" style="color: var(--moss-800);" onclick="toggleMenu()">Como Funciona</a>
+                <a href="#contato" class="py-2 font-medium" style="color: var(--moss-800);" onclick="toggleMenu()">Contato</a>
+                <a href="#orcamento" class="btn-primary px-5 py-2.5 rounded-full font-semibold text-sm text-center mt-2" onclick="toggleMenu()">
+                    Pedir orçamento
+                </a>
             </div>
         </nav>
     </header>
 
-    <!-- Hero Section -->
-    <section
-        class="min-h-screen bg-[url('https://edegramas.com.br/wp-content/uploads/2025/02/Banner1.webp')] bg-cover bg-center bg-no-repeat flex items-center justify-center">
-        <div class="bg-black/50 text-center text-white px-6 py-12 rounded-2xl max-w-3xl mx-auto">
-            <h2 class="text-4xl md:text-6xl font-bold mb-6 leading-tight">
-                Transforme seu espaço com<br>
-                <span class="text-green-400">gramas de qualidade!</span>
-            </h2>
+    <!-- Hero -->
+    <section id="inicio" class="hero-bg min-h-screen flex items-center pt-24 pb-16">
+        <div class="container mx-auto px-4 md:px-6">
+            <div class="max-w-2xl">
+                <p class="eyebrow mb-5" style="color: var(--wheat-300);">Direto do plantio · Biguaçu, SC</p>
+                <h2 class="font-display text-4xl sm:text-5xl md:text-6xl font-semibold leading-[1.08] text-white mb-6">
+                    A grama mais bonita da região, pronta pra <span class="italic" style="color: var(--wheat-300);">qualquer terreno</span>.
+                </h2>
+                <p class="text-lg md:text-xl leading-relaxed mb-8" style="color: var(--cream-100);">
+                    Cultivamos grama Esmeralda e São Carlos no nosso plantio em Biguaçu — para jardim, sítio, canteiro
+                    de obra, campo de futebol ou CT. Você escolhe: a gente leva até você em toda a Grande
+                    Florianópolis, ou retira direto no plantio.
+                </p>
 
-            <p class="text-xl md:text-2xl mb-8">
-                Trabalhamos com os melhores tipos de grama: Esmeralda e São Carlos
-            </p>
+                <div class="flex flex-col sm:flex-row gap-4 mb-10">
+                    <a href="#orcamento" class="btn-primary px-8 py-4 rounded-full text-base font-semibold text-center">
+                        Pedir orçamento
+                    </a>
+                    <a href="https://wa.me/5548984540699?text=Ol%C3%A1!%20Gostaria%20de%20saber%20mais%20sobre%20as%20gramas%20da%20Grameira%20Kons."
+                        target="_blank" rel="noopener noreferrer"
+                        class="btn-whats px-8 py-4 rounded-full text-base font-semibold flex items-center justify-center gap-2">
+                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893A11.821 11.821 0 0020.885 3.488" />
+                        </svg>
+                        Falar no WhatsApp
+                    </a>
+                </div>
 
-            <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
-                <button onclick="scrollToSection('orcamento')"
-                    class="bg-green-600 hover:bg-green-700 text-white px-8 py-4 rounded-full text-lg font-semibold transition-all transform hover:scale-105 shadow-lg">
-                    Peça seu orçamento
-                </button>
+                <div class="flex flex-wrap gap-x-8 gap-y-3">
+                    <div class="flex items-center gap-2" style="color: var(--turf-300);">
+                        <svg class="w-5 h-5 shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>
+                        <span class="text-sm font-medium" style="color: var(--cream-50);">Produção própria</span>
+                    </div>
+                    <div class="flex items-center gap-2">
+                        <svg class="w-5 h-5 shrink-0" style="color: var(--turf-300);" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>
+                        <span class="text-sm font-medium" style="color: var(--cream-50);">Do jardim ao campo de futebol</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-                <a href="https://wa.me/5548984540699?text=Olá! Gostaria de saber mais sobre as gramas da Grameira Kons."
-                    target="_blank" rel="noopener noreferrer"
-                    class="bg-green-500 hover:bg-green-600 text-white px-8 py-4 rounded-full text-lg font-semibold flex items-center space-x-2 shadow-lg transition">
-                    <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
-                        <path
-                            d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893A11.821 11.821 0 0020.885 3.488" />
-                    </svg>
-                    <span>Falar no WhatsApp</span>
-                </a>
+    <div class="mow-divider"></div>
+
+    <!-- Aplicações -->
+    <section class="py-16 md:py-20" style="background: var(--cream-100);">
+        <div class="container mx-auto px-4 md:px-6">
+            <div class="text-center mb-12 max-w-2xl mx-auto reveal">
+                <p class="eyebrow mb-4" style="color: var(--soil-700);">Para todo tipo de terreno</p>
+                <h3 class="font-display text-3xl md:text-4xl font-semibold" style="color: var(--moss-800);">
+                    Não é só jardim
+                </h3>
+            </div>
+
+            <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto reveal">
+                <div class="bg-white rounded-2xl p-6 text-center card-hover shadow-sm">
+                    <div class="w-12 h-12 rounded-full flex items-center justify-center mx-auto mb-4" style="background: var(--cream-100);">
+                        <svg class="w-6 h-6" style="color: var(--turf-500);" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 12l9-9 9 9M5 10v10a1 1 0 001 1h4a1 1 0 001-1v-4h2v4a1 1 0 001 1h4a1 1 0 001-1V10"></path></svg>
+                    </div>
+                    <h4 class="font-semibold mb-2" style="color: var(--moss-800);">Jardim residencial</h4>
+                    <p class="text-sm" style="color: var(--ink-900);">Do quintal pequeno ao terreno grande, com o tipo certo pra sol ou sombra.</p>
+                </div>
+                <div class="bg-white rounded-2xl p-6 text-center card-hover shadow-sm">
+                    <div class="w-12 h-12 rounded-full flex items-center justify-center mx-auto mb-4" style="background: var(--cream-100);">
+                        <svg class="w-6 h-6" style="color: var(--turf-500);" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 3v6m0 0l-3-3m3 3l3-3M5 21h14M6 21V10.5L12 6l6 4.5V21"></path></svg>
+                    </div>
+                    <h4 class="font-semibold mb-2" style="color: var(--moss-800);">Sítios e chácaras</h4>
+                    <p class="text-sm" style="color: var(--ink-900);">Área grande, entrega em volume e grama resistente para uso ao ar livre.</p>
+                </div>
+                <div class="bg-white rounded-2xl p-6 text-center card-hover shadow-sm">
+                    <div class="w-12 h-12 rounded-full flex items-center justify-center mx-auto mb-4" style="background: var(--cream-100);">
+                        <svg class="w-6 h-6" style="color: var(--turf-500);" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 21h18M6 21V8l6-4 6 4v13M9 21v-6h6v6M9 12h.01M15 12h.01M9 8h.01M15 8h.01"></path></svg>
+                    </div>
+                    <h4 class="font-semibold mb-2" style="color: var(--moss-800);">Obras e condomínios</h4>
+                    <p class="text-sm" style="color: var(--ink-900);">Paisagismo de projeto, com entrega combinada conforme o cronograma da obra.</p>
+                </div>
+                <div class="bg-white rounded-2xl p-6 text-center card-hover shadow-sm">
+                    <div class="w-12 h-12 rounded-full flex items-center justify-center mx-auto mb-4" style="background: var(--cream-100);">
+                        <svg class="w-6 h-6" style="color: var(--turf-500);" fill="none" stroke="currentColor" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9" stroke-width="1.5"></circle><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 3v3m0 12v3m9-9h-3M6 12H3m13.5-6.5L14 8m-6.5-2.5L10 8m6.5 8.5L14 16m-6.5 2.5L10 16"></path></svg>
+                    </div>
+                    <h4 class="font-semibold mb-2" style="color: var(--moss-800);">Campos e CTs</h4>
+                    <p class="text-sm" style="color: var(--ink-900);">Grama resistente ao uso intenso, para campos de futebol e centros de treinamento.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sobre -->
+    <section id="sobre" class="py-20 md:py-28" style="background: var(--cream-50);">
+        <div class="container mx-auto px-4 md:px-6">
+            <div class="grid md:grid-cols-2 gap-12 items-center max-w-6xl mx-auto reveal">
+                <div>
+                    <p class="eyebrow mb-4" style="color: var(--soil-700);">Nossa história</p>
+                    <h3 class="font-display text-3xl md:text-4xl font-semibold mb-6" style="color: var(--moss-800);">
+                        Direto do plantio, no coração de Biguaçu
+                    </h3>
+                    <p class="text-lg leading-relaxed mb-4" style="color: var(--ink-900);">
+                        Biguaçu é conhecida na Grande Florianópolis pelo seu plantio de grama, e é bem aqui que a
+                        Grameira Kons cultiva cada rolo que sai daqui: terra preparada, mudas cuidadas de perto e
+                        colheita feita no momento certo, sem pressa e sem atalho.
+                    </p>
+                    <p class="text-lg leading-relaxed mb-4" style="color: var(--ink-900);">
+                        Trabalhamos com dois tipos de grama muito procurados por quem mora na região — Esmeralda e
+                        São Carlos — e ajudamos você a escolher a ideal conforme o sol, a sombra e o tipo de terreno:
+                        jardim, sítio, obra ou campo.
+                    </p>
+                    <p class="text-lg leading-relaxed" style="color: var(--ink-900);">
+                        Vendemos com entrega para toda a Grande Florianópolis ou você pode retirar direto no plantio,
+                        vendo de perto a grama que vai levar.
+                    </p>
+                </div>
+                <div class="photo-slot rounded-2xl aspect-[4/3] flex flex-col items-center justify-center text-center p-8 gap-2">
+                    <svg class="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14M14 8h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" /></svg>
+                    <p class="font-medium text-sm">Espaço para foto do plantio</p>
+                    <p class="text-xs opacity-70">Sugestão: uma foto ampla do campo de grama, de manhã cedo</p>
+                </div>
             </div>
         </div>
     </section>
 
     <!-- Tipos de Grama -->
-    <section id="tipos-grama" class="py-20 bg-gray-50">
-        <div class="container mx-auto px-4">
-            <div class="text-center mb-16">
-                <h3 class="text-4xl font-bold text-gray-800 mb-4">Nossos Tipos de Grama</h3>
-                <p class="text-xl text-gray-600 max-w-2xl mx-auto">
-                    Oferecemos as melhores variedades de grama para cada tipo de ambiente e necessidade
+    <section id="tipos-grama" class="py-20 md:py-28" style="background: var(--cream-100);">
+        <div class="container mx-auto px-4 md:px-6">
+            <div class="text-center mb-14 max-w-2xl mx-auto reveal">
+                <p class="eyebrow mb-4" style="color: var(--soil-700);">Nossos produtos</p>
+                <h3 class="font-display text-3xl md:text-4xl font-semibold mb-4" style="color: var(--moss-800);">
+                    Tipos de grama que cultivamos
+                </h3>
+                <p class="text-lg" style="color: var(--moss-700);">
+                    Cada tipo se encaixa melhor num tipo de espaço. Conta pra gente como é o seu terreno que a gente
+                    te ajuda a decidir.
                 </p>
             </div>
 
-            <div class="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto">
+            <div class="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto reveal">
                 <!-- Grama Esmeralda -->
-                <div class="bg-white rounded-2xl shadow-lg overflow-hidden card-hover">
-                    <div
-                        class="h-64 bg-[url('https://quallygrama.com.br/wp-content/uploads/2023/05/Esmeralda-0.jpg')] bg-cover bg-center flex items-center justify-center">
-                        <svg class="w-32 h-32 text-white opacity-80" fill="currentColor" viewBox="0 0 24 24">
-                        </svg>
+                <div class="bg-white rounded-2xl shadow-md overflow-hidden card-hover">
+                    <div class="photo-slot h-56 flex flex-col items-center justify-center gap-2 text-center px-6" style="border-width: 0 0 2px 0;">
+                        <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14M14 8h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" /></svg>
+                        <p class="text-sm font-medium">Foto da grama Esmeralda</p>
                     </div>
                     <div class="p-8">
-                        <h4 class="text-2xl font-bold text-green-800 mb-4">Grama Esmeralda</h4>
-                        <p class="text-gray-600 mb-6">
-                            Grama de textura fina e aparência elegante, ideal para jardins residenciais e áreas de
-                            lazer.
+                        <h4 class="font-display text-2xl font-semibold mb-3" style="color: var(--moss-800);">Grama Esmeralda</h4>
+                        <p class="mb-6" style="color: var(--ink-900);">
+                            Folhas finas e verde intenso, formando um tapete denso e elegante. É a preferida para
+                            jardins residenciais que recebem sol direto boa parte do dia.
                         </p>
                         <ul class="space-y-3">
-                            <li class="flex items-center text-gray-700">
-                                <svg class="w-5 h-5 text-green-500 mr-3" fill="currentColor" viewBox="0 0 20 20">
-                                    <path fill-rule="evenodd"
-                                        d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-                                        clip-rule="evenodd"></path>
-                                </svg>
-                                Alta resistência ao pisoteio
+                            <li class="flex items-start gap-3">
+                                <svg class="w-5 h-5 mt-0.5 shrink-0" style="color: var(--turf-500);" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>
+                                <span>Boa resistência ao pisoteio moderado</span>
                             </li>
-                            <li class="flex items-center text-gray-700">
-                                <svg class="w-5 h-5 text-green-500 mr-3" fill="currentColor" viewBox="0 0 20 20">
-                                    <path fill-rule="evenodd"
-                                        d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-                                        clip-rule="evenodd"></path>
-                                </svg>
-                                Fácil manutenção
+                            <li class="flex items-start gap-3">
+                                <svg class="w-5 h-5 mt-0.5 shrink-0" style="color: var(--turf-500);" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>
+                                <span>Crescimento mais lento, menos cortes no ano</span>
                             </li>
-                            <li class="flex items-center text-gray-700">
-                                <svg class="w-5 h-5 text-green-500 mr-3" fill="currentColor" viewBox="0 0 20 20">
-                                    <path fill-rule="evenodd"
-                                        d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-                                        clip-rule="evenodd"></path>
-                                </svg>
-                                Boa adaptação ao sol pleno
+                            <li class="flex items-start gap-3">
+                                <svg class="w-5 h-5 mt-0.5 shrink-0" style="color: var(--turf-500);" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>
+                                <span>Ideal para sol pleno</span>
                             </li>
                         </ul>
                     </div>
                 </div>
 
                 <!-- Grama São Carlos -->
-                <div class="bg-white rounded-2xl shadow-lg overflow-hidden card-hover">
-                    <div
-                        class="h-64 bg-[url('https://projetojardinando.com.br/wp-content/uploads/2020/06/sao_calos_destaque_1280x720_1-1024x576.jpg')] bg-cover bg-center flex items-center justify-center">
-                        <svg class="w-32 h-32 text-white opacity-80" fill="currentColor" viewBox="0 0 24 24">
-                        </svg>
+                <div class="bg-white rounded-2xl shadow-md overflow-hidden card-hover">
+                    <div class="photo-slot h-56 flex flex-col items-center justify-center gap-2 text-center px-6" style="border-width: 0 0 2px 0;">
+                        <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14M14 8h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" /></svg>
+                        <p class="text-sm font-medium">Foto da grama São Carlos</p>
                     </div>
                     <div class="p-8">
-                        <h4 class="text-2xl font-bold text-green-800 mb-4">Grama São Carlos</h4>
-                        <p class="text-gray-600 mb-6">
-                            Grama de folhas largas e verde intenso, perfeita para áreas sombreadas e úmidas.
+                        <h4 class="font-display text-2xl font-semibold mb-3" style="color: var(--moss-800);">Grama São Carlos</h4>
+                        <p class="mb-6" style="color: var(--ink-900);">
+                            Folhas mais largas e macias, com ótima cobertura em áreas grandes. Se destaca em locais
+                            com sombra parcial e clima mais úmido.
                         </p>
                         <ul class="space-y-3">
-                            <li class="flex items-center text-gray-700">
-                                <svg class="w-5 h-5 text-green-500 mr-3" fill="currentColor" viewBox="0 0 20 20">
-                                    <path fill-rule="evenodd"
-                                        d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-                                        clip-rule="evenodd"></path>
-                                </svg>
-                                Boa resistência à sombra
+                            <li class="flex items-start gap-3">
+                                <svg class="w-5 h-5 mt-0.5 shrink-0" style="color: var(--turf-500);" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>
+                                <span>Boa tolerância à sombra e à umidade</span>
                             </li>
-                            <li class="flex items-center text-gray-700">
-                                <svg class="w-5 h-5 text-green-500 mr-3" fill="currentColor" viewBox="0 0 20 20">
-                                    <path fill-rule="evenodd"
-                                        d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-                                        clip-rule="evenodd"></path>
-                                </svg>
-                                Crescimento uniforme
+                            <li class="flex items-start gap-3">
+                                <svg class="w-5 h-5 mt-0.5 shrink-0" style="color: var(--turf-500);" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>
+                                <span>Cobertura rápida e uniforme</span>
                             </li>
-                            <li class="flex items-center text-gray-700">
-                                <svg class="w-5 h-5 text-green-500 mr-3" fill="currentColor" viewBox="0 0 20 20">
-                                    <path fill-rule="evenodd"
-                                        d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-                                        clip-rule="evenodd"></path>
-                                </svg>
-                                Ideal para solos úmidos
+                            <li class="flex items-start gap-3">
+                                <svg class="w-5 h-5 mt-0.5 shrink-0" style="color: var(--turf-500);" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>
+                                <span>Boa opção para áreas de lazer e sítios</span>
                             </li>
                         </ul>
                     </div>
                 </div>
             </div>
+            <p class="text-center mt-8" style="color: var(--moss-700);">
+                Precisa de outro tipo de grama? Fale com a gente pelo WhatsApp que verificamos a disponibilidade.
+            </p>
+        </div>
+    </section>
+
+    <!-- Como Funciona -->
+    <section id="como-funciona" class="py-20 md:py-28" style="background: var(--moss-950);">
+        <div class="container mx-auto px-4 md:px-6">
+            <div class="text-center mb-16 max-w-2xl mx-auto reveal">
+                <p class="eyebrow mb-4" style="color: var(--wheat-300);">Passo a passo</p>
+                <h3 class="font-display text-3xl md:text-4xl font-semibold mb-4 text-white">
+                    Do plantio até o seu terreno
+                </h3>
+            </div>
+
+            <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-8 max-w-6xl mx-auto reveal">
+                <div class="text-center px-2">
+                    <p class="step-number text-4xl mb-3">01</p>
+                    <h4 class="font-semibold text-lg mb-2 text-white">Você escolhe o tipo</h4>
+                    <p class="text-sm" style="color: var(--turf-300);">Esmeralda ou São Carlos, conforme o sol e o uso do seu espaço.</p>
+                </div>
+                <div class="text-center px-2">
+                    <p class="step-number text-4xl mb-3">02</p>
+                    <h4 class="font-semibold text-lg mb-2 text-white">Fala com a gente</h4>
+                    <p class="text-sm" style="color: var(--turf-300);">Pelo formulário ou direto no WhatsApp, com a metragem do local.</p>
+                </div>
+                <div class="text-center px-2">
+                    <p class="step-number text-4xl mb-3">03</p>
+                    <h4 class="font-semibold text-lg mb-2 text-white">Separamos seu pedido</h4>
+                    <p class="text-sm" style="color: var(--turf-300);">Colhemos direto do plantio, no dia combinado com você.</p>
+                </div>
+                <div class="text-center px-2">
+                    <p class="step-number text-4xl mb-3">04</p>
+                    <h4 class="font-semibold text-lg mb-2 text-white">Entrega ou retirada</h4>
+                    <p class="text-sm" style="color: var(--turf-300);">Levamos até você na Grande Florianópolis ou você retira aqui.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Galeria -->
+    <section class="py-20 md:py-28" style="background: var(--cream-50);">
+        <div class="container mx-auto px-4 md:px-6">
+            <div class="text-center mb-14 max-w-2xl mx-auto">
+                <p class="eyebrow mb-4" style="color: var(--soil-700);">Galeria</p>
+                <h3 class="font-display text-3xl md:text-4xl font-semibold mb-4" style="color: var(--moss-800);">
+                    Um pouco do nosso plantio
+                </h3>
+                <p class="text-lg" style="color: var(--moss-700);">
+                    Espaços reservados para você adicionar fotos reais do plantio, da colheita e das entregas.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-2 md:grid-cols-3 gap-4 max-w-5xl mx-auto reveal">
+                <div class="photo-slot rounded-xl aspect-square flex items-center justify-center p-4">
+                    <p class="text-xs font-medium text-center">Foto 1<br>Plantio</p>
+                </div>
+                <div class="photo-slot rounded-xl aspect-square flex items-center justify-center p-4">
+                    <p class="text-xs font-medium text-center">Foto 2<br>Colheita</p>
+                </div>
+                <div class="photo-slot rounded-xl aspect-square flex items-center justify-center p-4">
+                    <p class="text-xs font-medium text-center">Foto 3<br>Grama em rolo</p>
+                </div>
+                <div class="photo-slot rounded-xl aspect-square flex items-center justify-center p-4">
+                    <p class="text-xs font-medium text-center">Foto 4<br>Entrega</p>
+                </div>
+                <div class="photo-slot rounded-xl aspect-square flex items-center justify-center p-4">
+                    <p class="text-xs font-medium text-center">Foto 5<br>Jardim pronto</p>
+                </div>
+                <div class="photo-slot rounded-xl aspect-square flex items-center justify-center p-4">
+                    <p class="text-xs font-medium text-center">Foto 6<br>Equipe</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="mow-divider"></div>
+
+    <!-- Área de atendimento -->
+    <section class="py-16" style="background: var(--cream-100);">
+        <div class="container mx-auto px-4 md:px-6 text-center max-w-3xl">
+            <p class="eyebrow mb-4" style="color: var(--soil-700);">Área de atendimento</p>
+            <h3 class="font-display text-2xl md:text-3xl font-semibold mb-5" style="color: var(--moss-800);">
+                Entregamos em toda a Grande Florianópolis
+            </h3>
+            <div class="flex flex-wrap justify-center gap-3">
+                <span class="px-4 py-2 rounded-full text-sm font-medium bg-white" style="color: var(--moss-800);">Biguaçu</span>
+                <span class="px-4 py-2 rounded-full text-sm font-medium bg-white" style="color: var(--moss-800);">Florianópolis</span>
+                <span class="px-4 py-2 rounded-full text-sm font-medium bg-white" style="color: var(--moss-800);">São José</span>
+                <span class="px-4 py-2 rounded-full text-sm font-medium bg-white" style="color: var(--moss-800);">Palhoça</span>
+                <span class="px-4 py-2 rounded-full text-sm font-medium bg-white" style="color: var(--moss-800);">Governador Celso Ramos</span>
+                <span class="px-4 py-2 rounded-full text-sm font-medium bg-white" style="color: var(--moss-800);">Antônio Carlos</span>
+                <span class="px-4 py-2 rounded-full text-sm font-medium bg-white" style="color: var(--moss-800);">Santo Amaro da Imperatriz</span>
+            </div>
         </div>
     </section>
 
     <!-- Orçamento -->
-    <section id="orcamento" class="py-20 bg-white">
-        <div class="container mx-auto px-4">
-            <div class="text-center mb-12">
-                <h3 class="text-4xl font-bold text-gray-800 mb-4">Solicite seu orçamento</h3>
-                <p class="text-xl text-gray-600 max-w-2xl mx-auto">
-                    Preencha o formulário e entraremos em contato com você o mais rápido possível
+    <section id="orcamento" class="py-20 md:py-28" style="background: var(--cream-50);">
+        <div class="container mx-auto px-4 md:px-6">
+            <div class="text-center mb-12 max-w-2xl mx-auto">
+                <p class="eyebrow mb-4" style="color: var(--soil-700);">Orçamento</p>
+                <h3 class="font-display text-3xl md:text-4xl font-semibold mb-4" style="color: var(--moss-800);">
+                    Solicite seu orçamento
+                </h3>
+                <p class="text-lg" style="color: var(--moss-700);">
+                    Preencha os dados abaixo — ao enviar, sua mensagem abre direto no WhatsApp para a gente responder rápido.
                 </p>
             </div>
 
             <div class="max-w-2xl mx-auto">
-                <form id="orcamento-form" class="bg-gray-50 rounded-2xl p-8 shadow-lg">
+                <form id="orcamento-form" class="bg-white rounded-2xl p-8 shadow-lg">
                     <div class="grid md:grid-cols-2 gap-6 mb-6">
                         <div>
-                            <label for="nome" class="block text-gray-700 font-semibold mb-2">Nome completo</label>
+                            <label for="nome" class="block font-semibold mb-2" style="color: var(--moss-800);">Nome completo</label>
                             <input type="text" id="nome" name="nome" required
-                                class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent transition-all">
+                                class="w-full px-4 py-3 border rounded-lg focus:ring-2 focus:outline-none transition-all"
+                                style="border-color: #d8d2bd;">
                         </div>
                         <div>
-                            <label for="telefone" class="block text-gray-700 font-semibold mb-2">Telefone
-                                (WhatsApp)</label>
+                            <label for="telefone" class="block font-semibold mb-2" style="color: var(--moss-800);">Telefone (WhatsApp)</label>
                             <input type="tel" id="telefone" name="telefone" required
-                                class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent transition-all">
+                                class="w-full px-4 py-3 border rounded-lg focus:ring-2 focus:outline-none transition-all"
+                                style="border-color: #d8d2bd;">
                         </div>
                     </div>
 
                     <div class="grid md:grid-cols-2 gap-6 mb-6">
                         <div>
-                            <label for="tipo-grama" class="block text-gray-700 font-semibold mb-2">Tipo de grama</label>
+                            <label for="tipo-grama" class="block font-semibold mb-2" style="color: var(--moss-800);">Tipo de grama</label>
                             <select id="tipo-grama" name="tipo-grama" required
-                                class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent transition-all">
+                                class="w-full px-4 py-3 border rounded-lg focus:ring-2 focus:outline-none transition-all"
+                                style="border-color: #d8d2bd;">
                                 <option value="">Selecione o tipo</option>
-                                <option value="esmeralda">Grama Esmeralda</option>
-                                <option value="sao-carlos">Grama São Carlos</option>
-                                <option value="ambas">Ambas (quero saber mais)</option>
+                                <option value="Grama Esmeralda">Grama Esmeralda</option>
+                                <option value="Grama São Carlos">Grama São Carlos</option>
+                                <option value="Ainda não sei">Ainda não sei, quero orientação</option>
                             </select>
                         </div>
                         <div>
-                            <label for="metragem" class="block text-gray-700 font-semibold mb-2">Metragem aproximada
-                                (opcional)</label>
+                            <label for="metragem" class="block font-semibold mb-2" style="color: var(--moss-800);">Metragem aproximada</label>
                             <input type="text" id="metragem" name="metragem" placeholder="Ex: 100m²"
-                                class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent transition-all">
+                                class="w-full px-4 py-3 border rounded-lg focus:ring-2 focus:outline-none transition-all"
+                                style="border-color: #d8d2bd;">
                         </div>
                     </div>
 
                     <div class="mb-6">
-                        <label for="mensagem" class="block text-gray-700 font-semibold mb-2">Mensagem</label>
+                        <label for="mensagem" class="block font-semibold mb-2" style="color: var(--moss-800);">Mensagem</label>
                         <textarea id="mensagem" name="mensagem" rows="4"
-                            placeholder="Conte-nos mais sobre seu projeto..."
-                            class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent transition-all resize-none"></textarea>
+                            placeholder="Conte um pouco sobre o seu projeto: entrega ou retirada, prazo, etc."
+                            class="w-full px-4 py-3 border rounded-lg focus:ring-2 focus:outline-none transition-all resize-none"
+                            style="border-color: #d8d2bd;"></textarea>
                     </div>
 
-                    <button type="submit"
-                        class="w-full bg-green-600 hover:bg-green-700 text-white py-4 rounded-lg text-lg font-semibold transition-all transform hover:scale-105 shadow-lg">
-                        Solicitar orçamento
+                    <button type="submit" class="btn-primary w-full py-4 rounded-lg text-lg font-semibold">
+                        Enviar pelo WhatsApp
                     </button>
                 </form>
 
-                <div id="success-message"
-                    class="hidden mt-6 p-4 bg-green-100 border border-green-400 text-green-700 rounded-lg text-center">
-                    <svg class="w-6 h-6 inline-block mr-2" fill="currentColor" viewBox="0 0 20 20">
-                        <path fill-rule="evenodd"
-                            d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-                            clip-rule="evenodd"></path>
-                    </svg>
-                    Obrigado! Recebemos sua solicitação e entraremos em contato em breve.
+                <div id="success-message" class="hidden mt-6 p-4 rounded-lg text-center font-medium"
+                    style="background: var(--cream-100); color: var(--moss-800); border: 1px solid var(--turf-300);">
+                    Show! Vamos abrir o WhatsApp com sua solicitação já preenchida. Se não abrir automaticamente,
+                    confira se seu navegador bloqueou pop-ups.
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Contato -->
-    <section id="contato" class="py-20 bg-green-50">
-        <div class="container mx-auto px-4">
+    <section id="contato" class="py-20 md:py-28" style="background: var(--moss-800);">
+        <div class="container mx-auto px-4 md:px-6">
             <div class="text-center mb-12">
-                <h3 class="text-4xl font-bold text-gray-800 mb-4">Onde estamos</h3>
-                <p class="text-xl text-gray-600">Atendemos Biguaçu e região</p>
+                <p class="eyebrow mb-4" style="color: var(--wheat-300);">Contato</p>
+                <h3 class="font-display text-3xl md:text-4xl font-semibold mb-3 text-white">Onde estamos</h3>
+                <p class="text-lg" style="color: var(--turf-300);">Atendemos Biguaçu e toda a Grande Florianópolis</p>
             </div>
 
             <div class="max-w-4xl mx-auto grid md:grid-cols-2 gap-8">
                 <div class="bg-white rounded-2xl p-8 shadow-lg">
-                    <h4 class="text-2xl font-bold text-green-800 mb-6">Informações de contato</h4>
+                    <h4 class="font-display text-2xl font-semibold mb-6" style="color: var(--moss-800);">Informações de contato</h4>
 
-                    <div class="space-y-4">
-                        <div class="flex items-center">
-                            <svg class="w-6 h-6 text-green-600 mr-4" fill="currentColor" viewBox="0 0 20 20">
-                                <path fill-rule="evenodd"
-                                    d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z"
-                                    clip-rule="evenodd"></path>
-                            </svg>
+                    <div class="space-y-5">
+                        <div class="flex items-center gap-4">
+                            <svg class="w-6 h-6 shrink-0" style="color: var(--turf-500);" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd"></path></svg>
                             <div>
-                                <p class="font-semibold text-gray-800">Endereço</p>
-                                <p class="text-gray-600">Biguaçu - SC</p>
+                                <p class="font-semibold" style="color: var(--moss-800);">Endereço</p>
+                                <p style="color: var(--ink-900);">Biguaçu - SC</p>
                             </div>
                         </div>
 
-                        <div class="flex items-center">
-                            <svg class="w-6 h-6 text-green-600 mr-4" fill="currentColor" viewBox="0 0 20 20">
-                                <path
-                                    d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z">
-                                </path>
-                            </svg>
+                        <div class="flex items-center gap-4">
+                            <svg class="w-6 h-6 shrink-0" style="color: var(--turf-500);" fill="currentColor" viewBox="0 0 20 20"><path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"></path></svg>
                             <div>
-                                <p class="font-semibold text-gray-800">WhatsApp</p>
-                                <p class="text-gray-600">(48) 98454-0699</p>
+                                <p class="font-semibold" style="color: var(--moss-800);">WhatsApp</p>
+                                <p style="color: var(--ink-900);">(48) 98454-0699</p>
                             </div>
                         </div>
 
-                        <div class="flex items-center">
-                            <svg class="w-6 h-6 text-green-600 mr-4" fill="currentColor" viewBox="0 0 20 20">
-                                <path fill-rule="evenodd"
-                                    d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-12a1 1 0 10-2 0v4a1 1 0 00.293.707l2.828 2.829a1 1 0 101.415-1.415L11 9.586V6z"
-                                    clip-rule="evenodd"></path>
-                            </svg>
+                        <div class="flex items-center gap-4">
+                            <svg class="w-6 h-6 shrink-0" style="color: var(--turf-500);" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-12a1 1 0 10-2 0v4a1 1 0 00.293.707l2.828 2.829a1 1 0 101.415-1.415L11 9.586V6z" clip-rule="evenodd"></path></svg>
                             <div>
-                                <p class="font-semibold text-gray-800">Horário de atendimento</p>
-                                <p class="text-gray-600">Segunda a Sábado: 8h às 18h</p>
+                                <p class="font-semibold" style="color: var(--moss-800);">Horário de atendimento</p>
+                                <p style="color: var(--ink-900);">Segunda a Sábado: 8h às 18h</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-center gap-4">
+                            <svg class="w-6 h-6 shrink-0" style="color: var(--turf-500);" fill="currentColor" viewBox="0 0 24 24"><path d="M7.75 2A5.75 5.75 0 0 0 2 7.75v8.5A5.75 5.75 0 0 0 7.75 22h8.5A5.75 5.75 0 0 0 22 16.25v-8.5A5.75 5.75 0 0 0 16.25 2h-8.5ZM12 7a5 5 0 1 1 0 10 5 5 0 0 1 0-10Zm0 1.5A3.5 3.5 0 1 0 12 15a3.5 3.5 0 0 0 0-7Zm4.75-.25a1 1 0 1 1 0-2 1 1 0 0 1 0 2Z" /></svg>
+                            <div>
+                                <p class="font-semibold" style="color: var(--moss-800);">Instagram</p>
+                                <a href="https://www.instagram.com/grameirakons/" target="_blank" rel="noopener noreferrer" class="link-underline" style="color: var(--turf-500);">@grameirakons</a>
                             </div>
                         </div>
                     </div>
 
                     <div class="mt-8">
-                        <a href="https://wa.me/5548984540699?text=Olá! Gostaria de saber mais sobre as gramas da Grameira Kons."
+                        <a href="https://wa.me/5548984540699?text=Ol%C3%A1!%20Gostaria%20de%20saber%20mais%20sobre%20as%20gramas%20da%20Grameira%20Kons."
                             target="_blank" rel="noopener noreferrer"
-                            class="whatsapp-btn text-white px-6 py-3 rounded-lg font-semibold flex items-center justify-center space-x-2 w-full">
+                            class="btn-whats px-6 py-3 rounded-lg font-semibold flex items-center justify-center gap-2 w-full">
                             <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-                                <path
-                                    d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893A11.821 11.821 0 0020.885 3.488" />
+                                <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893A11.821 11.821 0 0020.885 3.488" />
                             </svg>
                             <span>Falar no WhatsApp</span>
                         </a>
                     </div>
                 </div>
 
-                <div class="bg-white rounded-2xl p-8 shadow-lg">
-                    <h4 class="text-2xl font-bold text-green-800 mb-6 text-center">Localização</h4>
+                <div class="bg-white rounded-2xl p-6 shadow-lg flex flex-col">
+                    <h4 class="font-display text-2xl font-semibold mb-6 text-center" style="color: var(--moss-800);">Localização</h4>
 
-                    <div class="text-center">
-                        <svg class="w-12 h-12 text-green-600 mx-auto mb-3" fill="currentColor" viewBox="0 0 20 20">
-                            <path fill-rule="evenodd"
-                                d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z"
-                                clip-rule="evenodd"></path>
-                        </svg>
-
-                        <p class="text-green-800 font-semibold text-lg">Biguaçu - SC</p>
-                        <p class="text-green-600 text-sm mb-4">Atendemos toda a região</p>
-
-                        <!-- MAPA EMBUTIDO -->
-                        <div class="rounded-xl overflow-hidden shadow-md border border-green-200">
-                            <iframe
-                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4657.493391781805!2d-48.75897448789142!3d-27.530324419194983!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9520b314e64358fd%3A0x14ba25210b88cf5d!2sGrameira%20kons!5e1!3m2!1spt-BR!2sbr!4v1761603956761!5m2!1spt-BR!2sbr"
-                                class="w-full h-56 md:h-64" style="border:0;" allowfullscreen="" loading="lazy"
-                                referrerpolicy="no-referrer-when-downgrade">
-                            </iframe>
-                        </div>
-
-                        <!-- LINK OPCIONAL -->
-                        <a href="https://www.google.com/maps?q=Grameira+kons+Biguaçu+SC" target="_blank"
-                            rel="noopener noreferrer"
-                            class="inline-block mt-3 text-green-700 hover:text-green-800 font-semibold underline">
-                            Ver no Google Maps
-                        </a>
+                    <div class="text-center mb-4">
+                        <p class="font-semibold text-lg" style="color: var(--moss-800);">Biguaçu - SC</p>
+                        <p class="text-sm" style="color: var(--turf-500);">Atendemos toda a região</p>
                     </div>
+
+                    <div class="rounded-xl overflow-hidden shadow-md flex-1">
+                        <iframe
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4657.493391781805!2d-48.75897448789142!3d-27.530324419194983!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9520b314e64358fd%3A0x14ba25210b88cf5d!2sGrameira%20kons!5e1!3m2!1spt-BR!2sbr!4v1761603956761!5m2!1spt-BR!2sbr"
+                            class="w-full h-56 md:h-full" style="border:0; min-height: 220px;" allowfullscreen="" loading="lazy"
+                            referrerpolicy="no-referrer-when-downgrade">
+                        </iframe>
+                    </div>
+
+                    <a href="https://www.google.com/maps?q=Grameira+kons+Biguaçu+SC" target="_blank"
+                        rel="noopener noreferrer"
+                        class="inline-block mt-4 text-center font-semibold link-underline mx-auto" style="color: var(--turf-500);">
+                        Ver no Google Maps
+                    </a>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Footer -->
-    <footer class="bg-green-800 text-white py-8">
-        <div class="container mx-auto px-4">
-            <div class="flex flex-col md:flex-row justify-between items-center">
-                <div class="flex items-center space-x-2 mb-4 md:mb-0">
-                    <div class="w-8 h-8 bg-green-600 rounded-full flex items-center justify-center">
-                        <span class="text-white font-bold">G</span>
+    <footer class="py-10" style="background: var(--moss-950);">
+        <div class="container mx-auto px-4 md:px-6">
+            <div class="flex flex-col md:flex-row justify-between items-center gap-6">
+                <div class="flex items-center gap-3">
+                    <div class="w-9 h-9 rounded-full overflow-hidden border-2" style="border-color: var(--turf-500);">
+                        <img src="https://lh3.googleusercontent.com/p/AF1QipMB5CxucZQqcK784OCO5aZzlXQwLnAGvZLWNEd4=s680-w680-h510-rw" alt="Logo Grameira Kons" class="w-full h-full object-cover" />
                     </div>
-                    <span class="text-xl font-bold">Grameira Kons</span>
+                    <span class="font-display text-xl font-semibold text-white">Grameira Kons</span>
                 </div>
 
-                <p class="text-green-200 text-center mb-4 md:mb-0">
-                    © 2025 Grameira Kons - Todos os direitos reservados
+                <p class="text-sm text-center" style="color: var(--turf-300);">
+                    © <span id="ano-atual"></span> Grameira Kons — Grama direto do plantio em Biguaçu, SC
                 </p>
 
-                <div class="flex space-x-4">
-                    <a href="https://wa.me/5548984540699" target="_blank" rel="noopener noreferrer"
-                        class="text-green-200 hover:text-white transition-colors">
+                <div class="flex gap-4">
+                    <a href="https://wa.me/5548984540699" target="_blank" rel="noopener noreferrer" style="color: var(--turf-300);" class="hover:text-white transition-colors" aria-label="WhatsApp">
                         <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
-                            <path
-                                d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893A11.821 11.821 0 0020.885 3.488" />
+                            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893A11.821 11.821 0 0020.885 3.488" />
                         </svg>
                     </a>
-                    <a href="https://www.instagram.com/grameirakons/" target="_blank" rel="noopener noreferrer"
-                        class="text-green-200 hover:text-white transition-colors">
+                    <a href="https://www.instagram.com/grameirakons/" target="_blank" rel="noopener noreferrer" style="color: var(--turf-300);" class="hover:text-white transition-colors" aria-label="Instagram">
                         <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                            <path
-                                d="M7.75 2A5.75 5.75 0 0 0 2 7.75v8.5A5.75 5.75 0 0 0 7.75 22h8.5A5.75 5.75 0 0 0 22 16.25v-8.5A5.75 5.75 0 0 0 16.25 2h-8.5ZM12 7a5 5 0 1 1 0 10 5 5 0 0 1 0-10Zm0 1.5A3.5 3.5 0 1 0 12 15a3.5 3.5 0 0 0 0-7Zm4.75-.25a1 1 0 1 1 0-2 1 1 0 0 1 0 2Z" />
+                            <path d="M7.75 2A5.75 5.75 0 0 0 2 7.75v8.5A5.75 5.75 0 0 0 7.75 22h8.5A5.75 5.75 0 0 0 22 16.25v-8.5A5.75 5.75 0 0 0 16.25 2h-8.5ZM12 7a5 5 0 1 1 0 10 5 5 0 0 1 0-10Zm0 1.5A3.5 3.5 0 1 0 12 15a3.5 3.5 0 0 0 0-7Zm4.75-.25a1 1 0 1 1 0-2 1 1 0 0 1 0 2Z" />
                         </svg>
                     </a>
                 </div>
@@ -426,64 +704,106 @@
         </div>
     </footer>
 
+    <!-- Floating WhatsApp button -->
+    <a id="floating-whats" href="https://wa.me/5548984540699?text=Ol%C3%A1!%20Gostaria%20de%20saber%20mais%20sobre%20as%20gramas%20da%20Grameira%20Kons."
+        target="_blank" rel="noopener noreferrer"
+        class="btn-whats fixed bottom-5 right-5 z-50 w-14 h-14 rounded-full flex items-center justify-center shadow-lg"
+        style="transition: opacity 0.25s ease, transform 0.25s ease;"
+        aria-label="Falar no WhatsApp">
+        <svg class="w-7 h-7" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893A11.821 11.821 0 0020.885 3.488" />
+        </svg>
+    </a>
+
     <script>
         function toggleMenu() {
-            const menu = document.getElementById('mobile-menu');
-            menu.classList.toggle('hidden');
+            document.getElementById('mobile-menu').classList.toggle('hidden');
         }
 
-        function scrollToSection(sectionId) {
-            document.getElementById(sectionId).scrollIntoView({
-                behavior: 'smooth'
+        document.getElementById('ano-atual').textContent = new Date().getFullYear();
+
+        // Gentle fade-up reveal as sections scroll into view
+        if ('IntersectionObserver' in window) {
+            const revealObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('is-visible');
+                        revealObserver.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.15 });
+            document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+        } else {
+            document.querySelectorAll('.reveal').forEach(el => el.classList.add('is-visible'));
+        }
+
+        // Hide the floating WhatsApp button while the footer is on screen,
+        // so it doesn't cover the WhatsApp/Instagram icons down there
+        const floatingWhats = document.getElementById('floating-whats');
+        const footerEl = document.querySelector('footer');
+        if (floatingWhats && footerEl && 'IntersectionObserver' in window) {
+            const footerObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        floatingWhats.style.opacity = '0';
+                        floatingWhats.style.pointerEvents = 'none';
+                        floatingWhats.style.transform = 'translateY(10px)';
+                    } else {
+                        floatingWhats.style.opacity = '1';
+                        floatingWhats.style.pointerEvents = 'auto';
+                        floatingWhats.style.transform = 'translateY(0)';
+                    }
+                });
+            }, { rootMargin: '0px 0px -10% 0px' });
+            footerObserver.observe(footerEl);
+        }
+
+        // Smooth scrolling for internal links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    e.preventDefault();
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
             });
-        }
+        });
 
-        // Form submission
+        // Header background on scroll
+        window.addEventListener('scroll', function () {
+            const header = document.getElementById('site-header');
+            if (window.scrollY > 80) {
+                header.style.boxShadow = '0 4px 20px rgba(16,28,14,0.12)';
+            } else {
+                header.style.boxShadow = 'none';
+            }
+        });
+
+        // Orçamento form -> sends the request straight to WhatsApp
         document.getElementById('orcamento-form').addEventListener('submit', function (e) {
             e.preventDefault();
 
             const formData = new FormData(this);
             const data = Object.fromEntries(formData);
 
-            // Simulate form submission
+            let mensagem = `Olá! Gostaria de um orçamento de grama.\n\n`;
+            mensagem += `*Nome:* ${data.nome}\n`;
+            mensagem += `*Telefone:* ${data.telefone}\n`;
+            mensagem += `*Tipo de grama:* ${data['tipo-grama']}\n`;
+            if (data.metragem) mensagem += `*Metragem:* ${data.metragem}\n`;
+            if (data.mensagem) mensagem += `*Mensagem:* ${data.mensagem}\n`;
+
+            const whatsappUrl = `https://wa.me/5548984540699?text=${encodeURIComponent(mensagem)}`;
+
+            document.getElementById('success-message').classList.remove('hidden');
+            window.open(whatsappUrl, '_blank');
+
             setTimeout(() => {
-                document.getElementById('orcamento-form').style.display = 'none';
-                document.getElementById('success-message').classList.remove('hidden');
-
-                // Reset form after 5 seconds
-                setTimeout(() => {
-                    document.getElementById('orcamento-form').style.display = 'block';
-                    document.getElementById('success-message').classList.add('hidden');
-                    document.getElementById('orcamento-form').reset();
-                }, 5000);
-            }, 1000);
-        });
-
-        // Smooth scrolling for navigation links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
-                }
-            });
-        });
-
-        // Add scroll effect to header
-        window.addEventListener('scroll', function () {
-            const header = document.querySelector('header');
-            if (window.scrollY > 100) {
-                header.classList.add('bg-white/95', 'backdrop-blur-sm');
-            } else {
-                header.classList.remove('bg-white/95', 'backdrop-blur-sm');
-            }
+                document.getElementById('success-message').classList.add('hidden');
+                this.reset();
+            }, 6000);
         });
     </script>
-    <script>(function () { function c() { var b = a.contentDocument || a.contentWindow.document; if (b) { var d = b.createElement('script'); d.innerHTML = "window.__CF$cv$params={r:'99557a06636e364c',t:'MTc2MTYwMjUzNS4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);"; b.getElementsByTagName('head')[0].appendChild(d) } } if (document.body) { var a = document.createElement('iframe'); a.height = 1; a.width = 1; a.style.position = 'absolute'; a.style.top = 0; a.style.left = 0; a.style.border = 'none'; a.style.visibility = 'hidden'; document.body.appendChild(a); if ('loading' !== document.readyState) c(); else if (window.addEventListener) document.addEventListener('DOMContentLoaded', c); else { var e = document.onreadystatechange || function () { }; document.onreadystatechange = function (b) { e(b); 'loading' !== document.readyState && (document.onreadystatechange = e, c()) } } } })();</script>
 </body>
 
 </html>
