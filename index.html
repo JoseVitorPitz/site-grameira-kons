@@ -336,10 +336,8 @@
                         vendo de perto a grama que vai levar.
                     </p>
                 </div>
-                <div class="photo-slot rounded-2xl aspect-[4/3] flex flex-col items-center justify-center text-center p-8 gap-2">
-                    <svg class="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14M14 8h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" /></svg>
-                    <p class="font-medium text-sm">Espaço para foto do plantio</p>
-                    <p class="text-xs opacity-70">Sugestão: uma foto ampla do campo de grama, de manhã cedo</p>
+                <div class="rounded-2xl overflow-hidden shadow-md aspect-[4/3]">
+                    <img src="images/sobre-plantio.jpg" alt="Campo de grama da Grameira Kons em Biguaçu" class="w-full h-full object-cover">
                 </div>
             </div>
         </div>
@@ -362,9 +360,8 @@
             <div class="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto reveal">
                 <!-- Grama Esmeralda -->
                 <div class="bg-white rounded-2xl shadow-md overflow-hidden card-hover">
-                    <div class="photo-slot h-56 flex flex-col items-center justify-center gap-2 text-center px-6" style="border-width: 0 0 2px 0;">
-                        <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14M14 8h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" /></svg>
-                        <p class="text-sm font-medium"></p>
+                    <div class="h-56 overflow-hidden">
+                        <img src="images/grama-esmeralda.jpg" alt="Grama Esmeralda da Grameira Kons" class="w-full h-full object-cover">
                     </div>
                     <div class="p-8">
                         <h4 class="font-display text-2xl font-semibold mb-3" style="color: var(--moss-800);">Grama Esmeralda</h4>
@@ -391,9 +388,8 @@
 
                 <!-- Grama São Carlos -->
                 <div class="bg-white rounded-2xl shadow-md overflow-hidden card-hover">
-                    <div class="photo-slot h-56 flex flex-col items-center justify-center gap-2 text-center px-6" style="border-width: 0 0 2px 0;">
-                        <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14M14 8h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" /></svg>
-                        <p class="text-sm font-medium">Foto da grama São Carlos</p>
+                    <div class="h-56 overflow-hidden">
+                        <img src="images/grama-sao-carlos.jpg" alt="Grama São Carlos da Grameira Kons" class="w-full h-full object-cover">
                     </div>
                     <div class="p-8">
                         <h4 class="font-display text-2xl font-semibold mb-3" style="color: var(--moss-800);">Grama São Carlos</h4>
@@ -473,23 +469,23 @@
             </div>
 
             <div class="grid grid-cols-2 md:grid-cols-3 gap-4 max-w-5xl mx-auto reveal">
-                <div class="photo-slot rounded-xl aspect-square flex items-center justify-center p-4">
-                    <p class="text-xs font-medium text-center">https://i.snapcdn.app/photo?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJodHRwczovL3Njb250ZW50LmNkbmluc3RhZ3JhbS5jb20vdi90NTEuODI3ODctMTUvNTE3MDM2NzIwXzE3OTM0MDEyNzQ3MDYwMTgwXzYwNDkzMTQ5ODMzOTUwMDQ1MjVfbi5qcGc_c3RwPWRzdC1qcGVncl9lMzVfczY0MHg2NDBfdHQ2Jl9uY19jYXQ9MTA4JmlnX2NhY2hlX2tleT1NelkzTWpNNU1ERXhPRGd3T1RJMk56QXhOZyUzRCUzRC4zLWNjYjctNSZjY2I9Ny01Jl9uY19zaWQ9NThjZGFkJmVmZz1leUoyWlc1amIyUmxYM1JoWnlJNklrTkJVazlWVTBWTVgwbFVSVTB1ZUhCcFpITXVNVFEwTUM1b1pISXVjbVZuZFd4aGNsOXdhRzkwYnk1RE15SjkmX25jX29oYz16cDF2NHFhWDNwVVE3a052d0UxWjB6NCZfbmNfb2M9QWRxMWlnSVlUckllaUZ0QWhubHE5cHJaUXQxR05TeFU1QVM1ZExSWmdrbzZYVEVOVjZBd3hQY1lyTTVvaFJrR190QSZfbmNfYWQ9ei1tJl9uY19jaWQ9MCZfbmNfenQ9MjMmc2U9LTEmX25jX2h0PXNjb250ZW50LW9yZDUtMS5jZG5pbnN0YWdyYW0uY29tJl9uY19naWQ9NmVIY0s4WEdOaTkwNnlEUVZNejRxZyZfbmNfc3M9N2EyMmUmb2g9MDBfQVFBMnFrWXBZVnRnQkwtVU01amJObi1VRmRLZUlOdVRDbW42WG9NNUxSNnNVdyZvZT02QTYxOERCMiIsImZpbGVuYW1lIjoiVGh1bWJuYWlsXzUxNzAzNjcyMF8xNzkzNDAxMjc0NzA2MDE4MF82MDQ5MzE0OTgzMzk1MDA0NTI1X24uanBnIiwibmJmIjoxNzg0Mzk1MDg5LCJleHAiOjE3ODQzOTg2ODksImlhdCI6MTc4NDM5NTA4OX0.EH7h_MwZTvSflU9B3hJwQpCj41lPm97SWahDHViV5Lc<br>Plantio</p>
+                <div class="rounded-xl overflow-hidden aspect-square shadow-sm">
+                    <img src="images/plantio-maquinario.jpg" alt="Plantio da Grameira Kons em Biguaçu" class="w-full h-full object-cover">
                 </div>
-                <div class="photo-slot rounded-xl aspect-square flex items-center justify-center p-4">
-                    <p class="text-xs font-medium text-center">Foto 2<br>Colheita</p>
+                <div class="rounded-xl overflow-hidden aspect-square shadow-sm">
+                    <img src="images/colheita.jpg" alt="Colheita da grama na Grameira Kons" class="w-full h-full object-cover">
                 </div>
-                <div class="photo-slot rounded-xl aspect-square flex items-center justify-center p-4">
-                    <p class="text-xs font-medium text-center">Foto 3<br>Grama em rolo</p>
+                <div class="rounded-xl overflow-hidden aspect-square shadow-sm">
+                    <img src="images/grama-em-rolo.jpg" alt="Grama em rolo pronta para entrega" class="w-full h-full object-cover">
                 </div>
-                <div class="photo-slot rounded-xl aspect-square flex items-center justify-center p-4">
-                    <p class="text-xs font-medium text-center">Foto 4<br>Entrega</p>
+                <div class="rounded-xl overflow-hidden aspect-square shadow-sm">
+                    <img src="images/entrega-por-do-sol.jpg" alt="Grama pronta para entrega na Grameira Kons" class="w-full h-full object-cover">
                 </div>
-                <div class="photo-slot rounded-xl aspect-square flex items-center justify-center p-4">
-                    <p class="text-xs font-medium text-center">Foto 5<br>Jardim pronto</p>
+                <div class="rounded-xl overflow-hidden aspect-square shadow-sm">
+                    <img src="images/campo-pronto.jpg" alt="Campo de grama pronto na Grameira Kons" class="w-full h-full object-cover">
                 </div>
-                <div class="photo-slot rounded-xl aspect-square flex items-center justify-center p-4">
-                    <p class="text-xs font-medium text-center">Foto 6<br>Equipe</p>
+                <div class="rounded-xl overflow-hidden aspect-square shadow-sm">
+                    <img src="images/trabalho-no-campo.jpg" alt="Trabalho no campo da Grameira Kons" class="w-full h-full object-cover">
                 </div>
             </div>
         </div>
