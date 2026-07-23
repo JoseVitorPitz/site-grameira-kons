@@ -1,0 +1,49 @@
+/* ====================================================================
+   GRAMEIRA KONS — PALETA DE CORES
+   ====================================================================
+   Mexa só neste arquivo para mudar as cores do site inteiro.
+   Todas as outras folhas de estilo usam estas variáveis (var(--nome)),
+   então qualquer ajuste aqui já reflete em tudo automaticamente.
+   ==================================================================== */
+
+:root {
+  /* Verdes — inspirados na grama esmeralda */
+  --verde-900: #0f2e17;   /* verde quase preto, usado em textos fortes */
+  --verde-800: #163d20;   /* header, rodapé, fundos escuros */
+  --verde-700: #1f5c2c;   /* principal — botões, links, destaques */
+  --verde-600: #2c7a3c;   /* hover de botões, ícones */
+  --verde-500: #3f9a4f;   /* detalhes, bordas ativas */
+  --verde-300: #8fcf9a;   /* fundos suaves, tags */
+  --verde-100: #e6f5e9;   /* fundos bem claros de seção */
+
+  /* Terracota — inspirado na terra roxa das mudas recém colhidas */
+  --terra-700: #7a3b1e;
+  --terra-600: #a1512a;
+  --terra-500: #c96a37;   /* acentos quentes, selos, badges */
+  --terra-100: #fbeee3;
+
+  /* Neutros / base */
+  --creme: #faf8f2;       /* fundo geral da página */
+  --branco: #ffffff;
+  --areia: #f1ede2;       /* fundo alternado de seções */
+  --cinza-900: #20241f;   /* texto principal */
+  --cinza-600: #52584c;   /* texto secundário */
+  --cinza-300: #d8d9c9;   /* bordas, divisores */
+
+  /* Feedback / utilidade */
+  --whatsapp: #25d366;
+  --whatsapp-escuro: #128c3e;
+  --sombra: 0 10px 30px rgba(15, 46, 23, 0.12);
+  --sombra-forte: 0 20px 45px rgba(15, 46, 23, 0.22);
+
+  /* Papéis semânticos (usados no style.css) */
+  --cor-fundo: var(--creme);
+  --cor-fundo-alt: var(--areia);
+  --cor-texto: var(--cinza-900);
+  --cor-texto-suave: var(--cinza-600);
+  --cor-primaria: var(--verde-700);
+  --cor-primaria-hover: var(--verde-600);
+  --cor-primaria-escura: var(--verde-800);
+  --cor-acento: var(--terra-500);
+  --cor-borda: var(--cinza-300);
+}
